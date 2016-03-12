@@ -1,0 +1,145 @@
+$icon-font-path: '../fonts/';
+
+$debug-allow: true;
+
+@import "bootstrap-config";
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+@import "megatype-config";
+@import "bower_components/megatype/megatype";
+
+@include megatype;
+
+.browserupgrade {
+  margin: 0.5rem 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.5rem 0;
+}
+
+/* Space out content a bit */
+body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1rem;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border: 0 none;
+
+  .btn {
+    padding: 1rem;
+    border: 0 none;
+  }
+  p:last-child {
+    top: 0;
+    margin-bottom: 0;
+  }
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 2rem 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+    padding: 3rem 4rem;
+  }
+}
+
+
+// MEGATYPE
+
+
+h1, .h1 {
+  &, .jumbotron & {
+    @include min-width(0 1 2) {
+      @include typeset($sans, $font-size-h1, 2, 0, 1);
+    }
+  }
+}
+
+h2, .h2 {
+  @include min-width(0 1 2) {
+    @include typeset($sans, $font-size-h2, 2, 1, 1);
+  }
+}
+
+h3, .h3 {
+  @include typeset($sans, $font-size-h3, 2, 1, 1);
+}
+
+h4, .h4 {
+  @include typeset($sans, $font-size-h4, 2, 1, 1);
+}
+
+h5, .h5 {
+  @include typeset($sans, $font-size-h5, 2, 1, 1);
+}
+
+h6, .h6 {
+  @include typeset($sans, $font-size-h6, 2, 1, 1);
+}
+
+// Body text
+// -------------------------
+
+p {
+  &, .jumbotron & {
+    @include min-width(0 1 2) {
+      @include typeset($sans, $font-size-base, $line-height-computed, 0, 1);
+    }
+  }
+}
+
+.lead {
+  @include min-width(0 1 2) {
+    @include typeset($sans, $font-size-base, 2, 0, 1);
+  }
+}
